@@ -1,0 +1,306 @@
+{
+  // OpenClaw Configuration for Wholesale Real Estate Multi-Agent System
+  // Copy to ~/.openclaw/openclaw.json and customize
+  //
+  // KNOWLEDGE BASE SETUP:
+  // 1. Clone the knowledge base: git clone https://github.com/Dbillionaer/real-estate-knowledge ~/Documents/wholesale-kb
+  // 2. Open it as an Obsidian vault: File → Open Vault → ~/Documents/wholesale-kb
+  // 3. Install QMD: bun install -g https://github.com/tobi/qmd
+  // 4. QMD will auto-index the vault via the paths below
+  
+  agents: {
+    defaults: {
+      model: "anthropic/claude-opus-4-6",
+      workspace: "~/.openclaw/workspace",
+      thinkingLevel: "high",
+      models: {
+        "anthropic/claude-opus-4-6": { alias: "Opus" },
+        "anthropic/claude-sonnet-4-5": { alias: "Sonnet" },
+        "openai/gpt-5.2": { alias: "GPT" },
+      },
+      subagents: {
+        model: "anthropic/claude-sonnet-4-5",
+        maxSpawnDepth: 1,
+        allowAgents: ["*"],
+        maxConcurrent: 5,
+      },
+      memorySearch: {
+        enabled: true,
+        provider: "local",
+        sync: { watch: true },
+      },
+    },
+    list: [
+      {
+        id: "lead-scout",
+        emoji: "🔍",
+        workspace: "~/.openclaw/workspace",
+        model: "anthropic/claude-sonnet-4-5",
+        tools: {
+          allow: ["browser", "read", "write", "sessions_spawn", "sessions_send", "memory_search", "memory_get"],
+        },
+      },
+      {
+        id: "market-analysis",
+        emoji: "📊",
+        workspace: "~/.openclaw/workspace",
+        model: "anthropic/claude-sonnet-4-5",
+        tools: {
+          allow: ["browser", "read", "write", "sessions_spawn", "sessions_send", "memory_search", "memory_get"],
+        },
+      },
+      {
+        id: "acquisition",
+        emoji: "🤝",
+        workspace: "~/.openclaw/workspace",
+        model: "anthropic/claude-sonnet-4-5",
+        tools: {
+          allow: ["browser", "read", "write", "sessions_spawn", "sessions_send", "message", "memory_search", "memory_get"],
+        },
+      },
+      {
+        id: "title-research",
+        emoji: "📋",
+        workspace: "~/.openclaw/workspace",
+        model: "anthropic/claude-sonnet-4-5",
+        tools: {
+          allow: ["browser", "read", "write", "sessions_spawn", "sessions_send", "memory_search", "memory_get"],
+        },
+      },
+      {
+        id: "dispositions",
+        emoji: "💰",
+        workspace: "~/.openclaw/workspace",
+        model: "anthropic/claude-sonnet-4-5",
+        tools: {
+          allow: ["browser", "read", "write", "sessions_spawn", "sessions_send", "message", "memory_search", "memory_get"],
+        },
+      },
+      {
+        id: "transaction-coord",
+        emoji: "📝",
+        workspace: "~/.openclaw/workspace",
+        model: "anthropic/claude-sonnet-4-5",
+        tools: {
+          allow: ["browser", "read", "write", "sessions_spawn", "sessions_send", "memory_search", "memory_get"],
+        },
+      },
+    ],
+  },
+
+  // QMD backend for local-first semantic search
+  // Install QMD: bun install -g https://github.com/tobi/qmd
+  memory: {
+    backend: "qmd",
+    citations: "auto",
+    qmd: {
+      includeDefaultMemory: true,
+      update: { interval: "5m", debounceMs: 15000 },
+      limits: { maxResults: 10, timeoutMs: 5000 },
+      paths: [
+        // ─── KNOWLEDGE BASE (Obsidian Vault) ───────────────────────────────
+        // Clone: git clone https://github.com/Dbillionaer/real-estate-knowledge ~/Documents/wholesale-kb
+        // Then open ~/Documents/wholesale-kb as an Obsidian vault
+        {
+          name: "kb-playbooks",
+          path: "~/Documents/wholesale-kb",
+          pattern: "*.md",
+          description: "Strategy playbooks and reference guides"
+        },
+        {
+          name: "kb-transcripts-cash",
+          path: "~/Documents/wholesale-kb/cash_deals",
+          pattern: "**/*.md",
+          description: "Cash deal call transcripts"
+        },
+        {
+          name: "kb-transcripts-seller-finance",
+          path: "~/Documents/wholesale-kb/seller_finance",
+          pattern: "**/*.md",
+          description: "Seller finance call transcripts"
+        },
+        {
+          name: "kb-transcripts-creative",
+          path: "~/Documents/wholesale-kb/creative_finance",
+          pattern: "**/*.md",
+          description: "Creative finance (Subject-To, Hybrid) call transcripts"
+        },
+        {
+          name: "kb-agent-lessons",
+          path: "~/Documents/wholesale-kb/agent-lessons",
+          pattern: "**/*.md",
+          description: "Lessons learned from real deals (written by agents)"
+        },
+        {
+          name: "kb-market-data",
+          path: "~/Documents/wholesale-kb/market-data",
+          pattern: "**/*.md",
+          description: "Comp data, ARV notes, market trends"
+        },
+        {
+          name: "kb-buyer-profiles",
+          path: "~/Documents/wholesale-kb/buyer-profiles",
+          pattern: "**/*.md",
+          description: "Buyer preferences and history"
+        },
+        // ─── DEAL PIPELINE ─────────────────────────────────────────────────
+        {
+          name: "deals",
+          path: "~/.openclaw/workspace/deals",
+          pattern: "**/*.md",
+          description: "Active deal pipeline files"
+        },
+        // ─── WORKSPACE MEMORY ──────────────────────────────────────────────
+        {
+          name: "workspace-memory",
+          path: "~/.openclaw/workspace",
+          pattern: "*.md",
+          description: "Agent workspace: MEMORY.md, USER.md, SOUL.md, AGENTS.md"
+        },
+      ],
+    },
+  },
+
+  channels: {
+    whatsapp: {
+      enabled: true,
+      dmPolicy: "allowlist",
+      allowFrom: [],
+    },
+    telegram: {
+      enabled: true,
+      botToken: "${TELEGRAM_BOT_TOKEN}",
+      dmPolicy: "allowlist",
+      allowFrom: [],
+    },
+    discord: { enabled: false },
+    signal: { enabled: false },
+  },
+
+  browser: {
+    enabled: true,
+    defaultProfile: "openclaw",
+    color: "#FF4500",
+  },
+
+  tools: {
+    browser: { enabled: true },
+    sessions: { enabled: true },
+    cron: { enabled: true },
+    webhook: { enabled: true },
+    memory: { enabled: true },
+  },
+
+  automation: {
+    webhooks: [
+      {
+        id: "driving-for-dollars",
+        path: "/leads/dfd",
+        session: "main",
+        description: "Receive leads from driving for dollars apps",
+      },
+      {
+        id: "direct-mail-responses",
+        path: "/leads/mail",
+        session: "main",
+        description: "Receive responses from direct mail campaigns",
+      },
+      {
+        id: "ppc-leads",
+        path: "/leads/ppc",
+        session: "main",
+        description: "Receive leads from PPC campaigns",
+      },
+    ],
+    
+    cron: [
+      {
+        id: "stale-deal-check",
+        schedule: "0 8 * * *",
+        session: "main",
+        message: "Check all deals in the pipeline for stale status. Alert on deals stuck in 'contacted' >3 days, 'under-contract' >7 days, or 'marketing' >5 days. Suggest follow-up actions.",
+      },
+      {
+        id: "pipeline-summary",
+        schedule: "0 18 * * *",
+        session: "main",
+        message: "Summarize today's pipeline activity: new leads, status changes, deals closed. Write summary to memory.",
+      },
+      {
+        id: "morning-zillow-scan",
+        schedule: "0 7 * * *",
+        session: "main",
+        message: "Scan Zillow for new listings and price drops in target ZIP codes. Filter by: under $300K, listed >30 days, or price reduced >10%. Create new deal files for matches.",
+      },
+      {
+        id: "county-records-check",
+        schedule: "0 9 * * 1",
+        session: "main",
+        message: "Check county records for new distress indicators: tax delinquent properties, code violations, probate filings, and pre-foreclosures in target areas.",
+      },
+      {
+        id: "expired-listings-check",
+        schedule: "0 10 * * *",
+        session: "main",
+        message: "Check for recently expired MLS listings in target ZIP codes. These are motivated sellers who tried to sell but failed. Create leads for follow-up.",
+      },
+      {
+        id: "price-drop-alerts",
+        schedule: "0 */4 * * *",
+        session: "main",
+        message: "Check watched properties for price drops. Alert if any property drops below our MAO threshold.",
+      },
+      {
+        id: "seller-follow-up",
+        schedule: "0 10 * * *",
+        session: "main",
+        message: "Review all deals in 'contacted' status. Identify sellers who haven't been contacted in 3+ days. Suggest follow-up messages.",
+      },
+      {
+        id: "buyer-outreach",
+        schedule: "0 14 * * 3",
+        session: "main",
+        message: "Review deals in 'marketing' status. Check if all qualified buyers have been contacted. Suggest additional outreach if needed.",
+      },
+      // ─── KNOWLEDGE BASE MAINTENANCE ──────────────────────────────────────
+      {
+        id: "kb-weekly-review",
+        schedule: "0 9 * * 0",  // Sunday 9 AM
+        session: "main",
+        message: "Review the knowledge base for gaps. Check: (1) Are there deals closed this week without agent-lessons entries? (2) Is market-data stale (>30 days) for target ZIPs? (3) Are buyer profiles up to date? Suggest updates.",
+      },
+    ],
+  },
+
+
+  // ─── CAMOFOX BROWSER PLUGIN ─────────────────────────────────────────────
+  // Anti-detection browser automation for accessing closed platforms
+  // Enables Wholesaile to automate XLeads, PropStream, REsimpli, etc.
+  // Docs: https://github.com/Dbillionaer/camofox-browser
+  plugins: {
+    "camofox-browser": {
+      enabled: true,
+      config: {
+        port: 9377,
+        autoStart: true,
+        maxSessions: 5,
+        maxTabsPerSession: 3,
+        sessionTimeoutMs: 600000,
+        browserIdleTimeoutMs: 300000,
+        maxOldSpaceSize: 128,
+      },
+    },
+  },
+
+  gateway: {
+    port: 18789,
+    bind: "loopback",
+    mode: "local",
+  },
+
+  security: {
+    sandbox: { mode: "non-main" },
+  },
+
+  logging: { level: "info" },
+}

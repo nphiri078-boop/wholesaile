@@ -1,7 +1,7 @@
 {
   "agents": {
     "defaults": {
-      "model": "xai/grok-beta",
+      "model": "anthropic/claude-opus-4-6",
       "workspace": "~/.openclaw/workspace",
       "thinkingLevel": "high",
       "models": {
@@ -39,7 +39,7 @@
     "list": [
       {
         "id": "lead-scout",
-        "emoji": "🔍",
+        "emoji": "\ud83d\udd0d",
         "workspace": "~/.openclaw/workspace",
         "model": "anthropic/claude-sonnet-4-5",
         "tools": {
@@ -56,7 +56,7 @@
       },
       {
         "id": "market-analysis",
-        "emoji": "📊",
+        "emoji": "\ud83d\udcca",
         "workspace": "~/.openclaw/workspace",
         "model": "anthropic/claude-sonnet-4-5",
         "tools": {
@@ -73,7 +73,7 @@
       },
       {
         "id": "acquisition",
-        "emoji": "🤝",
+        "emoji": "\ud83e\udd1d",
         "workspace": "~/.openclaw/workspace",
         "model": "anthropic/claude-sonnet-4-5",
         "tools": {
@@ -91,7 +91,7 @@
       },
       {
         "id": "title-research",
-        "emoji": "📋",
+        "emoji": "\ud83d\udccb",
         "workspace": "~/.openclaw/workspace",
         "model": "anthropic/claude-sonnet-4-5",
         "tools": {
@@ -108,7 +108,7 @@
       },
       {
         "id": "dispositions",
-        "emoji": "💰",
+        "emoji": "\ud83d\udcb0",
         "workspace": "~/.openclaw/workspace",
         "model": "anthropic/claude-sonnet-4-5",
         "tools": {
@@ -126,7 +126,7 @@
       },
       {
         "id": "transaction-coord",
-        "emoji": "📝",
+        "emoji": "\ud83d\udcdd",
         "workspace": "~/.openclaw/workspace",
         "model": "anthropic/claude-sonnet-4-5",
         "tools": {

@@ -275,21 +275,3 @@ Add to cron for daily backups:
 3. **Configure cron jobs** — Review the automated tasks in `openclaw.json` under `automation.cron`
 4. **Set up webhooks** — Connect your lead sources (see [WEBHOOK_API.md](WEBHOOK_API.md))
 5. **Review compliance** — Read [COMPLIANCE.md](COMPLIANCE.md) for legal requirements
-## Windows Installation
-
-### Prereqs
-1. **Docker Desktop:** https://docker.com/products/docker-desktop (Enable WSL2).
-2. **Node.js 22+:** https://nodejs.org (LTS installer).
-3. **pnpm:** `npm i -g pnpm`
-4. **Git:** https://git-scm.com
-
-### Paths
-- KB: `%USERPROFILE%\Documents\wholesale-kb`
-
-### docker-compose.yml Volume
-```yaml
-volumes:
-  - C:/Users/${USERNAME}/Documents/wholesale-kb:/kb:ro
-```
-
-Restart Docker after installs.
