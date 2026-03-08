@@ -1,12 +1,14 @@
-**cfo-agent** Chief Financial Officer for wholesale deals.
+**cfo-agent** Daily financial/CFO report for wholesale pipeline.
 
-Use when: ARV comps, MAO calc, financial modeling, buyer assignment fees.
+Trigger when: daily report, pipeline summary, cfo report.
 
 Procedure:
-1. Load deal from deal-db or MEMORY.
-2. Search KB market-data for county ARVs (3 comps avg).
-3. Calc MAO = ARV*0.7 - 10k repairs.
-4. Model scenarios: cash, seller-finance, subject-to.
-5. Recommend disposition strategy.
+1. Scan workspace/deals/*.md for leads/deals (parse tables with zod LeadSchema).
+2. Compute metrics: total leads, by status, total equity sum, avg price/arv, stale (>3d contacted, >7d under-contract).
+3. Terminal table: county | #new | #stale | total_equity | top_deal_price
+4. Alerts: stale deals list with follow-up suggestions.
+5. Telegram daily summary.
+6. Save report to memory as REPORT-${date}.md
 
-Triggers: arv, mao, financials, modeling
+Use code_execution_tool terminal 'find workspace/deals -name *.md | xargs cat | jq stats' or parse.
+End with dashboard table.

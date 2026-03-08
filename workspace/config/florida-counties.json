@@ -1,0 +1,23 @@
+{
+  "top10": [
+    {"name": "Miami-Dade", "fips": "12086"},
+    {"name": "Broward", "fips": "12011"},
+    {"name": "Palm Beach", "fips": "12099"},
+    {"name": "Hillsborough", "fips": "12057"},
+    {"name": "Orange", "fips": "12095"},
+    {"name": "Duval", "fips": "12031"},
+    {"name": "Lee", "fips": "12071"},
+    {"name": "Pinellas", "fips": "12103"},
+    {"name": "Volusia", "fips": "12127"},
+    {"name": "Brevard", "fips": "12009"}
+  ],
+  "all": [
+    "Alachua", "Baker", "Bay", "Bradford", "Brevard", "Broward", "Calhoun", "Charlotte", "Citrus", "Clay",
+    "Collier", "Columbia", "DeSoto", "Dixie", "Duval", "Escambia", "Flagler", "Franklin", "Gadsden", "Gilchrist",
+    "Glades", "Gulf", "Hamilton", "Hardee", "Hendry", "Hernando", "Highlands", "Hillsborough", "Holmes", "Indian River",
+    "Jackson", "Jefferson", "Lafayette", "Lake", "Lee", "Leon", "Levy", "Liberty", "Madison", "Manatee",
+    "Marion", "Martin", "Miami-Dade", "Monroe", "Nassau", "Okaloosa", "Okeechobee", "Orange", "Osceola", "Palm Beach",
+    "Pasco", "Pinellas", "Polk", "Putnam", "St. Johns", "St. Lucie", "Santa Rosa", "Sarasota", "Seminole", "Sumter",
+    "Suwannee", "Taylor", "Union", "Volusia", "Wakulla", "Walton", "Washington"
+  ]
+}

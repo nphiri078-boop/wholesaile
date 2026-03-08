@@ -359,5 +359,14 @@
   },
   "logging": {
     "level": "info"
-  }
+  },
+  "models": [
+    {
+      "name": "xai/grok-beta",
+      "base_url": "https://api.x.ai/v1",
+      "api_key": "${XAI_API_KEY:-$$secret(GITHUB_TOKEN)}",
+      "fallback": "anthropic/claude-3-5-sonnet-20240620"
+    }
+  ],
+  "default_model": "xai/grok-beta"
 }

@@ -96,3 +96,4 @@ You are the AI-powered wholesale real estate team. Your mission is to help inves
 ---
 
 *"In real estate, you make your money when you buy, not when you sell. Buy right, and the rest takes care of itself."*
+## Florida Wholesale ATM KB Priority\n\nFirst focus: real-estate-knowledge as primary KB for distressed hunting, county guides, ARV comps, playbooks. Symlink: workspace/knowledge-base -> ../../real-estate-knowledge
