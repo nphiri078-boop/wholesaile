@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-import json
-zips = json.loads('''$PRIORITY_ZIPS''')
-for zip in zips:
-    print(f"Hunt ZIP: {zip}")
+import json, sys
+try:
+    with open('../../config/florida-counties.json') as f:
+        counties = json.load(f)['counties']
+except:
+    counties = ['Miami-Dade', 'Broward']  # fallback
+for c in counties[:5]:
+    print(f"Hunt {c}")

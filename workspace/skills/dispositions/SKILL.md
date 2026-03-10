@@ -150,3 +150,6 @@ memory_search("buyer backs out assignment agreement protocol")
 
 ## Level 3 Helper
 Use scripts/buyer-blast.py for Telegram msg blasts.
+
+## Level 3 Helper
+Run `./scripts/buyer-blast.py` for buyer notification sim.

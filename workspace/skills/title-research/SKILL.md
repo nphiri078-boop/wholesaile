@@ -126,3 +126,6 @@ If none found, search online and add to knowledge base:
 
 ## Level 3 Helper
 Use scripts/county-lookup.sh for FL clerks.
+
+## Level 3 Helper
+Run `./scripts/county-lookup.sh` for FL county clerk sites.

@@ -1,8 +1,8 @@
 #!/bin/bash
-echo "FL County Clerks:"
-echo "Miami-Dade: https://www.miamidadeclerk.gov/"
-echo "Broward: https://www.browardclerk.org/"
-echo "Palm Beach: https://www.mypalmbeachclerk.com/"
-echo "Hillsborough: https://www.hillsclerk.com/"
-echo "Orange: https://www.myorangeclerk.com/"
-# Add more...
+declare -A clerks=(
+["Miami-Dade"]="miamidadeclerk.gov" ["Broward"]="browardclerk.org" ["Palm Beach"]="mypalmbeachclerk.com" ["Hillsborough"]="hillsclerk.com" ["Orange"]="orclerk.com"
+["Duval"]="coj.net/clerk" ["Pinellas"]="mypinellasclerk.org" ["Lee"]="leeclerk.org" ["Polk"]="polkcountyclerk.net" ["Brevard"]="brevardclerk.us"
+)
+for county in "${!clerks[@]}"; do
+    echo "$county: https://${clerks[$county]}"
+done

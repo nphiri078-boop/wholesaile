@@ -265,3 +265,6 @@ me back at [Your Number] when you get a chance. Thank you.
 
 ## Level 3 Helper
 Use scripts/pitch-gen.py for Seller finance templates.
+
+## Level 3 Helper
+Run `./scripts/pitch-gen.py` for sample seller pitch.

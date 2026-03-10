@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
-import sys
-pitch_type = sys.argv[1] if len(sys.argv) > 1 else "default"
-pitches = {
-    "seller-finance": "Subject: Creative Seller Finance Opportunity\nHi [Seller],\nInterested in seller financing? No banks, flexible terms...",
-    "default": "Hi [Seller], Let's discuss your property options including wholesale or finance..."
-}
-print(pitches.get(pitch_type, pitches["default"]))
+pitch = """
+Subject: Quick Cash Offer for [Property Address]
+
+Hi [Seller],
+
+I\'m a local investor interested in your property at [Address]. Based on market comps, ARV ~$[ARV], MAO $[MAO].
+
+Cash close in 7-14 days, as-is, no fees/repairs on your end.
+
+Interested? Reply or call [Phone].
+
+Best,
+[Your Name]
+"""
+print(pitch)

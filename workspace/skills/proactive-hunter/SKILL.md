@@ -19,3 +19,6 @@ Use camofox-browser skill if detect blocks. Prioritize high equity. End with 'Hu
 
 ## Level 3 Helper
 Use scripts/county-loop.py for priority_zips looping.
+
+## Level 3 Helper
+Run `./scripts/county-loop.py` for county loop sim.

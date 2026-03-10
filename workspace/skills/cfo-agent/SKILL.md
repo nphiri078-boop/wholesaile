@@ -15,3 +15,6 @@ End with dashboard table.
 
 ## Level 3 Helper
 Use scripts/report-gen.py for XLSX deals reports.
+
+## Level 3 Helper
+Run `./scripts/report-gen.py` for XLSX pipeline report.

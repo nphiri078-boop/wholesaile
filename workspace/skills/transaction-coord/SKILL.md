@@ -238,3 +238,6 @@ memory_search("seller finance terms addendum")
 
 ## Level 3 Helper
 Use scripts/checklist-gen.py for Closing checklists.
+
+## Level 3 Helper
+Run `./scripts/checklist-gen.py` for trans checklist.

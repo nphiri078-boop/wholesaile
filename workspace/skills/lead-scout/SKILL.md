@@ -148,3 +148,6 @@ memory_search("skip tracing workflow quality")
 
 ## Level 3 Helper
 Use scripts/hunt-zips.py for top FL ZIPs PropStream scouting.
+
+## Level 3 Helper
+Run `./scripts/hunt-zips.py` for top FL ZIPs.
