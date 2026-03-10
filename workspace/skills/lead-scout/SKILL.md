@@ -145,3 +145,6 @@ memory_search("lead qualification scoring priority")
 memory_search("follow-up cadence contact sequence")
 memory_search("skip tracing workflow quality")
 ```
+
+## Level 3 Helper
+Use scripts/hunt-zips.py for top FL ZIPs PropStream scouting.

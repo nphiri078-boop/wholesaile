@@ -12,3 +12,6 @@ Procedure:
 
 Use code_execution_tool terminal 'find workspace/deals -name *.md | xargs cat | jq stats' or parse.
 End with dashboard table.
+
+## Level 3 Helper
+Use scripts/report-gen.py for XLSX deals reports.

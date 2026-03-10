@@ -235,3 +235,6 @@ memory_search("contract template [deal type] [state]")
 memory_search("assignment clause language")
 memory_search("seller finance terms addendum")
 ```
+
+## Level 3 Helper
+Use scripts/checklist-gen.py for Closing checklists.

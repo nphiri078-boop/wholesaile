@@ -262,3 +262,6 @@ Hi [Name], this is [Your Name] calling about your property at [Address].
 I'm a local investor and may be able to make you a cash offer. Please call
 me back at [Your Number] when you get a chance. Thank you.
 ```
+
+## Level 3 Helper
+Use scripts/pitch-gen.py for Seller finance templates.

@@ -123,3 +123,6 @@ If none found, search online and add to knowledge base:
 # Add to: ~/Documents/wholesale-kb/market-data/[ZIP]-market-notes.md
 # Under "Title Companies Active in Area"
 ```
+
+## Level 3 Helper
+Use scripts/county-lookup.sh for FL clerks.

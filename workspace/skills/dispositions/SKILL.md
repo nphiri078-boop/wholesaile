@@ -147,3 +147,6 @@ Protocol for handling buyer default:
 ```
 memory_search("buyer backs out assignment agreement protocol")
 ```
+
+## Level 3 Helper
+Use scripts/buyer-blast.py for Telegram msg blasts.

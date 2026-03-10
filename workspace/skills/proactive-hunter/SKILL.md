@@ -16,3 +16,6 @@ Procedure:
 6. Telegram summary: code_execution_tool terminal 'curl telegram bot send table #leads total_equity top3 deals per county'
 
 Use camofox-browser skill if detect blocks. Prioritize high equity. End with 'Hunt complete: X leads saved, Y equity total.'
+
+## Level 3 Helper
+Use scripts/county-loop.py for priority_zips looping.
